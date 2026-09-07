@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jixano Privacy Practices</title>
+<style>
+  :root {
+    --sand: #fdeadc;
+    --panel: #fffaf6;
+    --ink: #1d0807;
+    --mute: #6a3d48;
+    --coral: #fa4d78;
+    --coral-deep: #dc3c75;
+    --line: #f3b8c8;
+    --soft: #ffe0ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(180deg, #ffe8ef 0%, var(--sand) 42%, #f8d5c8 100%);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+  .rail {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 72px;
+  }
+  .topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 20px;
+    margin-bottom: 20px;
+  }
+  .topbar .app {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .topbar a {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--coral);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  h1 {
+    font-size: clamp(1.4rem, 4.2vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .purpose {
+    color: var(--mute);
+    font-size: 0.98rem;
+    margin-bottom: 22px;
+    max-width: 40em;
+  }
+  .glance {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  @media (min-width: 560px) {
+    .glance { grid-template-columns: repeat(3, 1fr); }
+  }
+  .glance article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 14px 14px 12px;
+  }
+  .glance h2 {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .glance p {
+    font-size: 0.86rem;
+    color: var(--mute);
+    margin: 0;
+  }
+  .station {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 0 14px;
+    margin-bottom: 0;
+  }
+  .station .mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  .station .spine {
+    width: 2px;
+    background: var(--line);
+    margin: 6px auto 0;
+    min-height: 18px;
+    height: calc(100% - 42px);
+  }
+  .station .col {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 16px 16px 14px;
+    margin-bottom: 12px;
+  }
+  .station h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .station p {
+    color: var(--mute);
+    font-size: 0.95rem;
+    margin-bottom: 0.75em;
+  }
+  .station p:last-child { margin-bottom: 0; }
+  table.matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin: 8px 0 4px;
+  }
+  table.matrix th,
+  table.matrix td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.matrix th {
+    width: 34%;
+    color: var(--ink);
+    font-weight: 700;
+    background: var(--soft);
+  }
+  table.matrix td { color: var(--mute); }
+  .perm {
+    list-style: none;
+    margin: 8px 0 0;
+  }
+  .perm li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.93rem;
+    color: var(--mute);
+  }
+  .perm li:first-child { border-top: none; padding-top: 0; }
+  .perm strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  .closer {
+    margin-top: 20px;
+    padding: 16px;
+    background: var(--soft);
+    border-left: 3px solid var(--coral-deep);
+    font-size: 0.92rem;
+    color: var(--mute);
+  }
+  .closer a {
+    color: var(--coral);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .closer strong { color: var(--ink); }
+  @media (max-width: 480px) {
+    .rail { padding: 18px 12px 56px; }
+    .station { grid-template-columns: 32px 1fr; gap: 0 10px; }
+    .station .mark { width: 28px; height: 28px; font-size: 0.7rem; }
+    table.matrix th,
+    table.matrix td { display: block; width: 100%; }
+    table.matrix th { border-bottom: none; padding-bottom: 4px; }
+    table.matrix td { padding-top: 0; padding-bottom: 12px; }
+  }
+</style>
+</head>
+<body>
+  <div class="rail">
+    <div class="topbar">
+      <span class="app">Jixano</span>
+      <a href="mailto:quill.tile@jixano.studio">quill.tile@jixano.studio</a>
+    </div>
+
+    <h1>Privacy practices for the Softbox coloring app</h1>
+    <p class="purpose">This page explains how Jixano treats information while you browse built-in paint-by-number levels, color on the canvas, keep progress on device, optionally build a Custom Level from a photo, or save finished art to Photos.</p>
+
+    <div class="glance" aria-label="Quick overview">
+      <article>
+        <h2>Mostly local</h2>
+        <p>Fill progress, finished works, Custom Levels, and coin figures ordinarily stay on your iPhone.</p>
+      </article>
+      <article>
+        <h2>Upload is optional</h2>
+        <p>A photo leaves the device only if you start AI Create after the first-time Softbox consent panel.</p>
+      </article>
+      <article>
+        <h2>No forced profile</h2>
+        <p>You can color without registering or signing in. There is no mandatory account system.</p>
+      </article>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">01</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>What the app is covering</h3>
+        <p>Jixano is a portrait pixel playroom: Create (Today's Pick and resume paths), themed Levels, tap or swipe numbering, zoom and pan, Works for finished boards, and optional Photo to Level / AI Create. This document applies to that experience. It does not rewrite Apple system notices, carrier practices, or sites you open outside the app.</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">02</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>On-device records you may create while coloring</h3>
+        <table class="matrix">
+          <tr>
+            <th>Fill progress</th>
+            <td>Which cells are painted on boards you started, so Keep Coloring can resume them.</td>
+          </tr>
+          <tr>
+            <th>Finished works</th>
+            <td>Completion marks and entries in My Artwork.</td>
+          </tr>
+          <tr>
+            <th>Custom Levels</th>
+            <td>Pixel boards you accept after AI generation, stored on the device.</td>
+          </tr>
+          <tr>
+            <th>Workshop flags</th>
+            <td>A local note that you already agreed to the first-time AI processing notice, plus coin balance figures for optional coin-consuming actions.</td>
+          </tr>
+          <tr>
+            <th>Cache</th>
+            <td>Temporary files that help screens load smoothly.</td>
+          </tr>
+        </table>
+        <p style="margin-top:10px;">iOS may also handle ordinary technical context such as crash or performance signals, network reachability during a generation call, and permission states. Jixano does not operate a separate advertising identity program inside this coloring workspace.</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">03</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>The AI Create path, step by step</h3>
+        <p>Built-in play, local saves, and viewing Works do not require uploading pictures. When you choose Photo to Level:</p>
+        <p><strong style="color:var(--ink);">1.</strong> You pick a library still or capture one with the camera.<br>
+        <strong style="color:var(--ink);">2.</strong> After the Softbox consent panel (first time), the image plus style instructions for flat pixel art are sent to Grsai, a third-party AI image service.<br>
+        <strong style="color:var(--ink);">3.</strong> You preview the result, accept it into Custom Levels, or generate again.<br>
+        <strong style="color:var(--ink);">4.</strong> Accepted boards remain on device. Jixano does not keep a cloud gallery of your source photos for in-app browsing.</p>
+        <p>That request does not attach face templates, face-based identity checks, microphone audio, chat logs, or precise location.</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">04</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>Permissions the system may request</h3>
+        <ul class="perm">
+          <li><strong>Photo library (read)</strong>Only to choose an existing image for AI Create. You can limit or deny it in iOS Settings; built-in coloring still works.</li>
+          <li><strong>Camera</strong>Only to shoot a still for the same optional path.</li>
+          <li><strong>Photos add access</strong>Only when you choose to place a finished coloring into the system Photos app. Denial blocks export, not ordinary play.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">05</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>Partners, care, and how long records last</h3>
+        <p>Grsai processes authorized generation requests. Apple may process limited information tied to App Store distribution and system camera or photo interfaces. We do not sell fill progress or source photos as a standalone data product.</p>
+        <p>We apply measures suited to a local-first app that sometimes transmits an image you chose: encrypted transport where the platform supports it, uploads only after you act, and progress kept primarily on device. No electronic path is perfectly secure. Keep the device locked and treat exported Photos items as ordinary personal media.</p>
+        <p>Local progress, artwork, Custom Levels, coin figures, and the AI consent flag remain until you clear workshop cache in Settings, delete a Custom Level or Works entry where available, uninstall Jixano, or erase app data through iOS. Clearing cache cannot retrieve images already saved to Photos. Brief network files may exist during generation and are not lasting archives.</p>
+      </div>
+    </div>
+
+    <div class="station">
+      <div>
+        <div class="mark">06</div>
+        <div class="spine" aria-hidden="true"></div>
+      </div>
+      <div class="col">
+        <h3>Choices, younger players, and applicable law</h3>
+        <p>You may stay on built-in levels, skip AI Create, change camera and photo permissions, delete Custom Levels, remove Works entries, clear cache, or uninstall. Because there is no mandatory Jixano account, there is no online profile portal for cloud downloads.</p>
+        <p>Jixano is a casual coloring app, not a tool for collecting children's personal information. Use AI Create only with photos you are allowed to process, and with adult guidance where the law requires it. If a child's photo was submitted in a concerning way, email us for device-side guidance.</p>
+        <p>Questions about these practices are approached under the laws of the United States, without conflict rules that would force another jurisdiction, except where mandatory protections where you live cannot be waived. After a good-faith attempt to resolve matters by email, disputes may proceed before competent dispute resolution bodies under applicable law.</p>
+      </div>
+    </div>
+
+    <div class="closer">
+      <p>These practices apply from <strong>September 6, 2026</strong>. Later revisions shown in Settings replace earlier text when Softbox data handling changes.</p>
+      <p style="margin-top:8px;">Questions: <a href="mailto:quill.tile@jixano.studio">quill.tile@jixano.studio</a></p>
+    </div>
+  </div>
+</body>
+</html>
